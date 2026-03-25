@@ -1,4 +1,17 @@
-print("welcome to my AI trucking Assistant")
-user_question=input("Ask a trucking question:
-print("You Asked:",user_question)
-print("This is were AI logic will go next.")
+print("AI Trucking Assistant")
+
+load_weight = float(input("Enter load weight in pounds: "))
+miles = float(input("Enter trip miles: "))
+rate = float(input("Enter rate offered ($): "))
+fuel_cost = float(input("Enter estimated fuel cost ($): "))
+
+profit = rate - fuel_cost
+rpm = rate / miles if miles != 0 else 0
+
+print("\n--- Load Summary ---")
+print(f"Load Weight: {load_weight} lbs")
+print(f"Trip Miles: {miles}")
+print(f"Rate Offered: ${rate:.2f}")
+print(f"Estimated Fuel Cost: ${fuel_cost:.2f}")
+print(f"Estimated Profit: ${profit:.2f}")
+print(f"Rate Per Mile: ${rpm:.2f}")
