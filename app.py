@@ -6,7 +6,13 @@ rate = float(input("Enter rate offered ($): "))
 fuel_cost = float(input("Enter estimated fuel cost ($): "))
 
 profit = rate - fuel_cost
-rpm = rate / miles if miles != 0 else 0
+
+if profit < 0:
+print("⚠️ This load is NOT profitable")
+else:
+print("✅ This load is profitable")
+
+rpm = rate/ miles if miles != 0 else 0
 
 print("\n--- Load Summary ---")
 print(f"Load Weight: {load_weight} lbs")
