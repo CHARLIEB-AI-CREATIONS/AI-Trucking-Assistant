@@ -14,10 +14,12 @@ profit = rate - total_expense
 rpm = rate / loaded_miles if loaded_miles != 0 else 0
 all_mile_rpm = rate / total_miles if total_miles != 0 else 0
 
-if profit < 0:
- print("⚠️ This load is NOT profitable")
+if profit >= 500 and all_mile_rpm >= 2.50:
+ print("✅ Strong load — TAKE IT")
+elif profit >= 200 and all_mile_rpm >= 2.00:
+ print("⚠️ Marginal load — only take if needed")
 else:
- print("✅ This load is profitable")
+ print("❌ Weak load — DECLINE IT")
 
 print("\n--- Load Summary ---")
 print(f"Load Weight: {load_weight} lbs")
