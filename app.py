@@ -22,17 +22,15 @@ min_profit_target = 500
 min_all_in_rpm = 2.50
 
 # Decision Logic
-if    profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
-decision = "✅ TAKE THE LOAD"
-reason = "Profit and all-in RPM both meet your target."
-
-elif    profit >= 200 and all_in_rpm >= 2.00:
-decision = "⚠️ MAYBE TAKE IT"
-reason = "It makes money, but it is below your strong-load standard."
-
-else:    decision = "❌ DECLINE THE LOAD"
-reason = "Profit and/or all-in RPM are too weak."
-
+if profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
+ decision = "✅ TAKE THE LOAD"
+ reason = "Profit and all-in RPM both meet your target."
+elif profit >= 200 and all_in_rpm >= 2.00:
+ decision = "⚠️ MAYBE TAKE IT"
+ reason = "It makes money, but it is below your strong-load standard."
+else:
+ decision = "❌ DECLINE THE LOAD"
+ reason = "Profit and/or all-in RPM are too weak."
 # Output
 print("\n--- Load Summary ---")
 print(f"Load Weight: {load_weight} lbs")
