@@ -24,7 +24,7 @@ reason = "Profit and all-in RPM both meet your target."
 elif profit >= 200 and all_in_rpm >= 2.00:
 decision = "⚠️ MAYBE TAKE IT"
 reason = "It makes money, but it is below your strong-load standard."
-else: decision = "❌ DECLINE THE LOAD"
+else:decision = "❌ DECLINE THE LOAD"
 reason = "Profit and/or all-in RPM are too weak."
 
 print("\n--- Load Summary ---")
