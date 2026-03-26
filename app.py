@@ -20,8 +20,8 @@ all_in_rpm = rate / total_miles if total_miles != 0 else 0
 # Targets (your standards)
 min_profit_target = 500
 min_all_in_rpm = 2.50
- profit < 0:
-print("🚨 LOSING MONEY — DO NOT TAKE THIS LOAD")
+if profit < 0:
+ print("🚨 LOSING MONEY — DO NOT TAKE THIS LOAD")
 # Decision Logic
 if profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
  decision = "✅ TAKE THE LOAD"
@@ -38,13 +38,14 @@ print(f"Load Weight: {load_weight} lbs")
 print(f"Loaded Miles: {loaded_miles}")
 print(f"Deadhead Miles: {deadhead_miles}")
 print(f"Total Miles: {total_miles}")
-print(f"Rate Offered: ${rate:.2f}")
+print(f"Rate Offered: ${rate:.2f})
 print(f"Tolls: ${tolls:.2f}")
 print(f"Cost Per Mile: ${cost_per_mile:.2f}")
 print(f"Operating Cost: ${operating_cost:.2f}")
 print(f"Total Expense: ${total_expense:.2f}")
 print(f"Estimated Profit: ${profit:.2f}")
-print(f"Profit Per Mile: ${profit_per_mile:.2f}")print(f"Loaded Rate Per Mile: ${loaded_rpm:.2f}")
+print(f"Profit Per Mile: ${profit_per_mile:.2f}")
+print(f"Loaded Rate Per Mile: ${loaded_rpm:.2f}")
 print (f"All-In Rate Per Mile: ${all_in_rpm:.2f}")
 print("\n--- Decision ---")
 print(decision)
