@@ -43,6 +43,6 @@ print(f"All-In RPM: ${all_in_rpm:.2f}")
 print("\n--- Decision ---")
 print(decision)
 print(reason)
-
+again = input("\nRun another load? (y/n): ")
 if again.lower() != 'y':
  break
