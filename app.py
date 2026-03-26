@@ -11,15 +11,22 @@ total_miles = loaded_miles + deadhead_miles
 operating_cost = total_miles * cost_per_mile
 total_expense = operating_cost + tolls
 profit = rate - total_expense
-rpm = rate / loaded_miles if loaded_miles != 0 else 0
-all_mile_rpm = rate / total_miles if total_miles != 0 else 0
 
-if profit >= 500 and all_mile_rpm >= 2.50:
- print("✅ Strong load — TAKE IT")
-elif profit >= 200 and all_mile_rpm >= 2.00:
- print("⚠️ Marginal load — only take if needed")
-else:
- print("❌ Weak load — DECLINE IT")
+loaded_rpm = rate / loaded_miles if loaded_miles != 0 else 0
+all_in_rpm = rate / total_miles if total_miles != 0 else 0
+
+min_profit_target = 500
+min_all_in_rpm = 2.50
+
+if  profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
+decision = "✅ TAKE THE LOAD"
+reason = "Profit and all-in RPM both meet your target."
+elif  profit >= 200 and all_in_rpm >= 2.00:
+decision = "⚠️ MAYBE TAKE IT"
+reason = "It makes money, but it is below your strong-load standard."
+else: 
+ decision = "❌ DECLINE THE LOAD"
+reason = "Profit and/or all-in RPM are too weak."
 
 print("\n--- Load Summary ---")
 print(f"Load Weight: {load_weight} lbs")
@@ -32,5 +39,11 @@ print(f"Cost Per Mile: ${cost_per_mile:.2f}")
 print(f"Operating Cost: ${operating_cost:.2f}")
 print(f"Total Expense: ${total_expense:.2f}")
 print(f"Estimated Profit: ${profit:.2f}")
-print(f"Loaded Rate Per Mile: ${rpm:.2f}")
-print(f"All-In Rate Per Mile: ${all_mile_rpm:.2f}")
+print(f"Loaded Rate Per Mile: ${loaded_rpm:.2f}")
+print(f"All-In Rate Per Mile: ${all_in_rpm:.2f}")
+
+print("\n--- Decision ---")
+print(decision)
+print(f"Reason: {reason}")
+print(f"Target Profit: ${min_profit_target:.2f}+")
+print(f"Target All-In RPM: ${min_all_in_rpm:.2f}+")
