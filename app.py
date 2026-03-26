@@ -43,6 +43,6 @@ while True:
         print("\n--- Decision ---")
         print(decision)
         print(reason)
-        again = input("\nRun another load? (y/n): ")
-        if again.lower() != 'y':
-            break
+         again = input("\nRun another load? (y/n): ")
+         if again.lower() != 'y':
+              break
