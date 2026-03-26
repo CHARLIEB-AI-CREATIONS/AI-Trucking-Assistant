@@ -1,7 +1,7 @@
 print("AI Trucking Assistant")
 
 while True:
-print("\n--- New Load ---")
+ print("\n--- New Load ---")
 
 load_weight = float(input("Enter load weight in pounds: "))
 loaded_miles = float(input("Enter loaded trip miles: "))
@@ -23,17 +23,17 @@ min_profit_target = 500
 min_all_in_rpm = 2.50
 
 if profit < 0:
-decision = "❌ LOSING MONEY — DO NOT TAKE THIS LOAD"
-reason = "You are paying to move this load."
+ decision = "❌ LOSING MONEY — DO NOT TAKE THIS LOAD"
+ reason = "You are paying to move this load."
 elif profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
-decision = "✅ TAKE THE LOAD"
-reason = "Profit and all-in RPM both meet your target."
+ decision = "✅ TAKE THE LOAD"
+ reason = "Profit and all-in RPM both meet your target."
 elif profit >= 200 and all_in_rpm >= 2.00:
-decision = "⚠️ MAYBE TAKE IT"
-reason = "It makes money, but below your strong standard."
+ decision = "⚠️ MAYBE TAKE IT"
+ reason = "It makes money, but below your strong standard."
 else:
-decision = "❌ DECLINE THE LOAD"
-reason = "Profit and/or RPM too weak."
+ decision = "❌ DECLINE THE LOAD"
+ reason = "Profit and/or RPM too weak."
 
 print("\n--- Load Summary ---")
 print(f"Total Miles: {total_miles}")
