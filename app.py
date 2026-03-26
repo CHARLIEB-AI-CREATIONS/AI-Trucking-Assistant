@@ -44,6 +44,5 @@ print("\n--- Decision ---")
 print(decision)
 print(reason)
 
-again = input("\nCheck another load? (y/n): ")
 if again.lower() != 'y':
-break
+ break
