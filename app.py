@@ -10,14 +10,13 @@ while True:
     rate = float(input("Enter rate offered ($): "))
     tolls = float(input("Enter toll cost ($): "))
     cost_per_mile = float(input("Enter your truck cost per mile ($): "))
-
-    # Calculations
+    target_rate = total_expense + min_profit_target
+    rate_gap = target_rate - rate    # Calculations
     total_miles = loaded_miles + deadhead_miles
     operating_cost = total_miles * cost_per_mile
     total_expense = operating_cost + tolls
     profit = rate - total_expense
-target_rate = total_expense + min_profit_target
-rate_gap = target_rate - rate
+
     profit_per_mile = profit / total_miles if total_miles != 0 else 0
     loaded_rpm = rate / loaded_miles if loaded_miles != 0 else 0
     all_in_rpm = rate / total_miles if total_miles != 0 else 0
