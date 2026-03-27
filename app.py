@@ -51,7 +51,12 @@ rate_gap = target_rate - rate
     print(f"Estimated Profit: ${profit:.2f}")
     print(f"Profit Per Mile: ${profit_per_mile:.2f}")
     print(f"All-In RPM: ${all_in_rpm:.2f}")
+print(f"Suggested Rate (Target Profit): ${target_rate:.2f}")
 
+if rate_gap > 0:
+    print(f"Ask for: +${rate_gap:.2f}")
+else:
+    print("Current rate already meets your target")
     print("\n--- Decision ---")
     print(decision)
     print(reason)
