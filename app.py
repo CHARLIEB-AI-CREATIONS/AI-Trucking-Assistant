@@ -20,7 +20,13 @@ while True:
     operating_cost = total_miles * cost_per_mile
     total_expense = operating_cost + tolls
     profit = rate - total_expense
-
+# Load Rating
+if profit >= 800 and all_in_rpm >= 2.75:
+    load_rating = "🔥 HIGH VALUE LOAD"
+elif profit >= 300:
+    load_rating = "⚠️ DECENT — NEGOTIATE"
+else:
+    load_rating = "❌ LOW VALUE LOAD"
     target_rate = total_expense + min_profit_target
     rate_gap = target_rate - rate
 
