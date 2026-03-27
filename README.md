@@ -1,40 +1,50 @@
 # AI Trucking Assistant
 
-A Python tool that helps evaluate whether a trucking load is worth taking.
+A Python command-line tool that evaluates trucking load profitability and provides clear take/decline decisions based on real operating costs.
 
-## What it does
-This app calculates:
-- loaded miles
-- deadhead miles
-- total miles
-- toll cost
-- operating cost
-- total expense
-- estimated profit
-- loaded RPM
-- all-in RPM
+---
 
-It also gives a final decision:
-- TAKE THE LOAD
-- MAYBE TAKE IT
-- DECLINE THE LOAD
+## Features
 
-## Why I built it
-I built this project to solve a real trucking problem: loads can look good at first, but after deadhead, tolls, and operating cost, they may not be worth taking.
+- Calculates total miles (loaded + deadhead)
+- Computes operating cost and total expenses
+- Calculates profit and profit per mile
+- Shows loaded RPM and all-in RPM
+- Provides a clear decision:
+  - Take Load
+  - Maybe Take
+  - Decline
+- Suggests target rate for negotiation
 
-As someone with trucking experience, I wanted a simple decision tool that turns load information into a fast business decision.
+---
 
-## Example decisions
-- Strong load = high profit + strong all-in RPM
-- Marginal load = profitable but below target
-- Weak load = too little profit or bad all-in RPM
+## Tech Used
 
-## Tech used
-- Python
+- Python 3
 
-## Future upgrades
-- fuel cost estimator
-- profit per mile
-- profit per hour
-- load scoring system
-- simple web app version
+---
+
+## Example Output
+
+Total Miles: 1000  
+Operating Cost: $1500  
+Total Expense: $1600  
+Estimated Profit: $900  
+Profit Per Mile: $0.90  
+All-In RPM: $2.50  
+
+Decision: TAKE THE LOAD  
+
+---
+
+## How to Run
+
+git clone https://github.com/CHARLIEB-AI-CREATIONS/AI-Trucking-Assistant.git  
+cd AI-Trucking-Assistant  
+python3 app.py  
+
+---
+
+## Author
+
+Charles Barnes  
