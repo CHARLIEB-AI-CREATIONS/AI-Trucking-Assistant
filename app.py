@@ -11,15 +11,15 @@ while True:
     tolls = float(input("Enter toll cost ($): "))
     cost_per_mile = float(input("Enter your truck cost per mile ($): "))
 
+    # Targets
+    min_profit_target = 500
+    min_all_in_rpm = 2.50
+
     # Calculations
     total_miles = loaded_miles + deadhead_miles
     operating_cost = total_miles * cost_per_mile
     total_expense = operating_cost + tolls
     profit = rate - total_expense
-
-    # Targets
-    min_profit_target = 500
-    min_all_in_rpm = 2.50
 
     target_rate = total_expense + min_profit_target
     rate_gap = target_rate - rate
@@ -29,8 +29,10 @@ while True:
     all_in_rpm = rate / total_miles if total_miles != 0 else 0
 
     # Load Rating
-    if profit >= 800 and all_in_rpm >= 2.75:
+    if rate_gap <= -300:
         load_rating = "🔥 HIGH VALUE LOAD"
+    elif profit >= 800:
+        load_rating = "🔥 STRONG PROFIT LOAD"
     elif profit >= 300:
         load_rating = "⚠️ DECENT — NEGOTIATE"
     else:
@@ -52,11 +54,18 @@ while True:
 
     # Output
     print("\n--- Load Summary ---")
-    print(f"Total Miles: {total_miles}")
+    print(f"Load Weight: {load_weight:.0f} lbs")
+    print(f"Loaded Miles: {loaded_miles:.1f}")
+    print(f"Deadhead Miles: {deadhead_miles:.1f}")
+    print(f"Total Miles: {total_miles:.1f}")
+    print(f"Rate Offered: ${rate:.2f}")
+    print(f"Tolls: ${tolls:.2f}")
+    print(f"Truck Cost Per Mile: ${cost_per_mile:.2f}")
     print(f"Operating Cost: ${operating_cost:.2f}")
     print(f"Total Expense: ${total_expense:.2f}")
     print(f"Estimated Profit: ${profit:.2f}")
     print(f"Profit Per Mile: ${profit_per_mile:.2f}")
+    print(f"Loaded RPM: ${loaded_rpm:.2f}")
     print(f"All-In RPM: ${all_in_rpm:.2f}")
     print(f"Load Rating: {load_rating}")
     print(f"Suggested Rate (Target Profit): ${target_rate:.2f}")
@@ -72,5 +81,5 @@ while True:
 
     # Loop control
     again = input("\nRun another load? (y/n): ")
-    if again.lower() != 'y':
+    if again.lower() != "y":
         break
