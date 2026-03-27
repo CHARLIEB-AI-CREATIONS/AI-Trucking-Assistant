@@ -10,34 +10,34 @@ while True:
     rate = float(input("Enter rate offered ($): "))
     tolls = float(input("Enter toll cost ($): "))
     cost_per_mile = float(input("Enter your truck cost per mile ($): "))
-    target_rate = total_expense + min_profit_target
-    rate_gap = target_rate - rate    # Calculations
-    total_miles = loaded_miles + deadhead_miles
-    operating_cost = total_miles * cost_per_mile
-    total_expense = operating_cost + tolls
-    profit = rate - total_expense
-
-    profit_per_mile = profit / total_miles if total_miles != 0 else 0
-    loaded_rpm = rate / loaded_miles if loaded_miles != 0 else 0
-    all_in_rpm = rate / total_miles if total_miles != 0 else 0
 
     # Targets
     min_profit_target = 500
     min_all_in_rpm = 2.50
 
+    # Calculations
+    total_miles = loaded_miles + deadhead_miles
+    operating_cost = total_miles * cost_per_mile
+    total_expense = operating_cost + tolls
+    profit = rate - total_expense
+
+    target_rate = total_expense + min_profit_target
+    rate_gap = target_rate - rate
+
+    profit_per_mile = profit / total_miles if total_miles != 0 else 0
+    loaded_rpm = rate / loaded_miles if loaded_miles != 0 else 0
+    all_in_rpm = rate / total_miles if total_miles != 0 else 0
+
     # Decision Logic
     if profit < 0:
         decision = "❌ LOSING MONEY — DO NOT TAKE THIS LOAD"
         reason = "You are paying to move this load."
-
     elif profit >= min_profit_target and all_in_rpm >= min_all_in_rpm:
         decision = "✅ TAKE THE LOAD"
         reason = "Profit and all-in RPM both meet your target."
-
     elif profit >= 200 and all_in_rpm >= 2.00:
         decision = "⚠️ MAYBE TAKE IT"
         reason = "It makes money, but below your strong standard."
-
     else:
         decision = "❌ DECLINE THE LOAD"
         reason = "Profit and/or RPM too weak."
@@ -50,12 +50,13 @@ while True:
     print(f"Estimated Profit: ${profit:.2f}")
     print(f"Profit Per Mile: ${profit_per_mile:.2f}")
     print(f"All-In RPM: ${all_in_rpm:.2f}")
-print(f"Suggested Rate (Target Profit): ${target_rate:.2f}")
+    print(f"Suggested Rate (Target Profit): ${target_rate:.2f}")
 
-if rate_gap > 0:
-    print(f"Ask for: +${rate_gap:.2f}")
-else:
-    print("Current rate already meets your target")
+    if rate_gap > 0:
+        print(f"Ask for: +${rate_gap:.2f}")
+    else:
+        print("Current rate already meets your target")
+
     print("\n--- Decision ---")
     print(decision)
     print(reason)
