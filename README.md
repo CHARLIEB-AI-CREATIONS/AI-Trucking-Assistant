@@ -20,6 +20,7 @@
 A Python-based tool that evaluates trucking loads in real time and determines whether a load is profitable, negotiable, or should be rejected.
 
 Built to simulate real-world decision-making for owner-operators and dispatchers.
+"Designed based on real-world trucking experience to optimize profit per mile and eliminate low-value freight decisions."
 
 ---
 
