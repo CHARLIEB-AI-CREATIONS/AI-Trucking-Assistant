@@ -1,7 +1,25 @@
-# 🚛 AI Trucking Profit Analyzer  
-**Built by Charles Barnes**
+# 🚛 AI Trucking Profit Analyzer
+
+## 🌐 Live App
+
+👉 [Try the AI Trucking Profit Analyzer](https://ai-trucking-analyzer.streamlit.app)
+
+### 🚀 Use it instantly — no install needed
+
+---
+
+## 👤 Author
+
+**Charles Barnes**  
+📧 cdug4762@gmail.com  
+
+---
+
+## 📌 Overview
 
 A Python-based tool that evaluates trucking loads in real time and determines whether a load is profitable, negotiable, or should be rejected.
+
+Built to simulate real-world decision-making for owner-operators and dispatchers.
 
 ---
 
@@ -21,12 +39,12 @@ A Python-based tool that evaluates trucking loads in real time and determines wh
 
 Breakdown includes:
 
-- Total miles
-- Operating cost
-- Total expense
-- Profit
-- Profit per mile
-- All-in RPM
+- Total miles  
+- Operating cost  
+- Total expense  
+- Profit  
+- Profit per mile  
+- All-in RPM  
 
 ---
 
@@ -35,7 +53,7 @@ Breakdown includes:
 - Flags bad loads instantly ❌  
 - Suggests negotiation opportunities ⚠️  
 - Highlights strong and elite loads 🔥  
-- Uses real trucking metrics (RPM, cost per mile, deadhead impact)
+- Uses real trucking metrics (RPM, cost per mile, deadhead impact)  
 
 ---
 
@@ -44,12 +62,12 @@ Breakdown includes:
 The tool classifies loads into:
 
 - 🔥 **HIGH VALUE LOAD** → Strong profit + high RPM  
-- ⚠️ **DECENT – NEGOTIATE** → Close to target, needs better rate  
+- ⚠️ **DECENT — NEGOTIATE** → Close to target, needs better rate  
 - ❌ **DO NOT TAKE THIS LOAD** → Not profitable  
 
 ---
 
-## 🖥️ UI Version (Streamlit App)
+## 💻 UI Version (Streamlit App)
 
 This project includes a web-based interface for easier use.
 
@@ -58,7 +76,3 @@ This project includes a web-based interface for easier use.
 ```bash
 pip install streamlit
 python3 -m streamlit run app_ui.py
-## 🌐 Live App
-
-👉 [Try the AI Trucking Profit Analyzer](https://ai-trucking-analyzer.streamlit.app)
-### 🚀 Use it instantly — no install needed
