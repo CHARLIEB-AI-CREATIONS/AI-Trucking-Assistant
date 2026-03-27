@@ -57,7 +57,7 @@ else:
     print(f"Profit Per Mile: ${profit_per_mile:.2f}")
     print(f"All-In RPM: ${all_in_rpm:.2f}")
     print(f"Suggested Rate (Target Profit): ${target_rate:.2f}")
-
+print(f"Load Rating: {load_rating}")
     if rate_gap > 0:
         print(f"Ask for: +${rate_gap:.2f}")
     else:
