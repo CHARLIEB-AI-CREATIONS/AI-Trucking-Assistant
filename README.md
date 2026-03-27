@@ -58,3 +58,7 @@ This project includes a web-based interface for easier use.
 ```bash
 pip install streamlit
 python3 -m streamlit run app_ui.py
+## 🌐 Live App
+
+👉 [Try the AI Trucking Profit Analyzer](https://ai-trucking-analyzer.streamlit.app)
+### 🚀 Use it instantly — no install needed
